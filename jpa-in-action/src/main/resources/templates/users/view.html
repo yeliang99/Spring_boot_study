@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="fragment/header::header">
+</div>
+
+<h3 th:text="${userModel.title}"></h3>
+<div  th:if="${userModel.user}">
+    <div th:text="${userModel.user.id}"></div><br/>
+    <div th:text="${userModel.user.name}"></div><br/>
+    <div th:text="${userModel.user.email}"></div><br/>
+</div>
+
+<a th:href="@{'delete/'+${userModel.user.id}}">删除</a>
+<a th:href="@{'modify/'+${userModel.user.id}}">修改</a>
+<div th:replace="fragment/footer::footer"></div>
+</body>
+</html>
