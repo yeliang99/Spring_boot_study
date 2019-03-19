@@ -1,0 +1,33 @@
+buildscript {
+	repositories {
+		//mavenCentral()
+		maven {
+			url 'http://maven.aliyun.com/nexus/content/groups/public/'
+		}
+	}
+	dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.19.RELEASE'
+	}
+}
+
+plugins {
+	id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+group = 'com.jxw'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	//mavenCentral()
+	url 'http://maven.aliyun.com/nexus/content/groups/public/'
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'net.java.dev.jna', name: 'jna', version: '4.3.0'
+	compile group: 'org.springframework.data', name: 'spring-data-elasticsearch', version: '3.1.5.RELEASE'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
